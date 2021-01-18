@@ -1,0 +1,392 @@
+/* Global Styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 61%;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+li,
+button,
+label,
+input,
+p {
+  font-size: 2rem;
+}
+h2 {
+  font-size: 4.8rem;
+}
+h3 {
+  font-size: 3rem;
+  font-weight: normal;
+}
+h4,
+h5 {
+  font-size: 2.8rem;
+}
+a {
+  color: white;
+  text-decoration: none;
+}
+.button {
+  padding: 2rem 6rem;
+  /* background: #4c6e97; */
+  background: rgba(18, 172, 146, 0.8);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+  animation: buttonAnimation 3s infinite alternate ease-in-out; /* numero de repeticiones infinito */
+}
+
+
+@keyframes buttonAnimation {
+  from {
+    background: rgba(18, 172, 146, 0.8);
+  }
+  to {
+    background: rgb(18, 172, 146);
+    border-radius: 1rem;
+  }
+}
+
+/* Nav Section With main */
+
+.main-head {
+  background: rgba(18, 172, 146, 1);
+  color: white;
+  position: sticky;
+  top: 0px;
+  z-index: 3;
+}
+nav {
+  display: flex;
+  /* centrarlo con un 5% margen en cada lado */
+  width: 90%;
+  margin: auto;
+  /*  */
+  padding: 2rem;
+  min-height: 10vh;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul {
+  display: flex;
+  flex: 1 1 40rem;  /* separar en 2 columnas el logo y el menu */
+  /* centrar li */
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
+
+nav ul li:hover {
+  animation: underlineAnimation 2s alternate ease-in-out;
+}
+
+#logo {
+  flex: 2 1 40rem;
+  font-family: "Pattaya", sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+
+/* Menu Animation */
+
+@keyframes underlineAnimation {
+  from {
+    border-bottom:  3px solid transparent;
+  } to {
+    border-bottom:  3px solid white;
+  }
+}
+
+.main {
+  min-height: 90vh;
+  background: linear-gradient(rgba(18, 172, 146, 0.6), transparent),
+    url("./img/landing.jpg"); /* añadir gradiente a la imagen */
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.main h3 {
+  padding: 5rem;
+}
+
+/* Locations SECTION */
+
+#locations {
+  color: whitesmoke;
+  min-height: 100vh;
+  background: linear-gradient(rgba(18, 172, 146, 0.3), transparent),
+    url("./img/location2.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  position: relative; /* posicionar las nubes */
+  overflow: hidden;  /* ocultar lo que se salga de la sección */
+}
+.locations-head {
+  width: 90%;
+  margin: auto;
+}
+.locations-head h2 {
+  padding: 1rem 0rem;
+  /* text-decoration-thickness: 0.5rem;  */
+  
+}
+.locations-head h3 {
+  padding: 4rem 0rem;
+  font-size: 2.3rem;
+  /* background: linear-gradient(#131c27, #663b34);
+  background-clip: text;
+  -webkit-text-fill-color: transparent; */
+}
+
+.cloud {
+  width: 80%;
+  position: absolute;
+  top: 0%;
+  right: 0%;
+}
+.moving-cloud-1 {
+  animation: cloudAnimation 3s infinite alternate ease-in-out;
+}
+.moving-cloud-2 {
+  top: 20%;
+  z-index: -1;
+  opacity: 0.7;
+  animation: cloudAnimation 3.5s infinite alternate ease-in-out;
+  /* animation-iteration-count: 3; */
+}
+
+/* Cloud Animation */
+@keyframes cloudAnimation {
+  from {
+    transform: translate(10%, -10%);
+  }
+  to {
+    transform: translate(0%, 0%);
+  }
+}
+
+/* Benefits section*/
+.benefits-head {
+  background: linear-gradient(rgba(18, 172, 146, 0.3), transparent);
+  padding: 3rem;
+  min-height: 35vh;
+  /* centrar textos */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+  /*  */
+  color: rgba(19, 28, 39, 0.8);
+  text-align: center;
+}
+.benefits-head h3 {
+  padding: 1rem;
+}
+
+.cards {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  min-height: 65vh;
+  align-items: center; /* necesario para que min-height funcione */
+  flex-wrap: wrap;
+  color: rgba(19, 28, 39, 0.8);
+ 
+}
+
+.card {
+  text-align: center;
+  flex: 1 1 25rem;
+  min-height: 40vh;
+  margin: 2rem 5rem;
+  box-shadow: 0px 10px 10px rgba(18, 172, 146, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+  background-color: white;
+}
+
+.cards img {
+  max-width: 15%;
+  margin: 2rem;
+}
+.card h4,
+.card p {
+  padding: 1rem;
+  line-height: 1.8;
+}
+
+.card-icon {
+  background: rgb(18, 172, 146);
+}
+
+/* Contact Section */
+#contact {
+  min-height: 100vh;
+  background: linear-gradient(rgba(18, 172, 146, 0.3), transparent),
+    url("./img/contact.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-wrapper {
+  background: rgba(19, 28, 39, 0.8);
+  width: 60%;
+  color: white;
+  border-radius: 20px;
+}
+.form-head {
+  text-align: center;
+  padding: 2rem;
+}
+.name-form,
+.email-form,
+.message-form,
+.agree-form {
+  text-align: center;
+  padding: 1rem;
+}
+
+.form-wrapper label {
+  margin: 0rem 3rem;
+}
+.form-wrapper button {
+  width: 80%;
+  padding: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 3rem;
+  margin-left: 10%;
+  border-radius: 1rem;
+  background: rgba(18, 172, 146, 0.8);
+  border: none;
+  color: white;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.form-wrapper button:hover {
+  background: rgb(18, 172, 146);
+} 
+
+.form-wrapper input {
+  padding: 1rem 6rem;
+}
+
+.form-wrapper textarea {
+  min-width: 36rem;
+  min-height: 10rem;
+}
+
+
+/* Footer Section */
+
+footer {
+  color: white;
+  background: rgba(18, 172, 146, 1);
+  font-family: "Pattaya", sans-serif;
+  font-weight: 300;
+}
+.footer-wrapper {
+  display: flex;
+  padding: 2rem;
+  width: 90%;
+  margin: auto;
+  align-items: center;
+  min-height: 10vh;
+  flex-wrap: wrap;
+}
+footer h5 {
+  flex: 1 1 40rem;
+}
+footer ul {
+  display: flex;
+  list-style: none;
+  flex: 1 1 40rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+/* Button focus to make website accessible */
+
+button:focus {
+  background: #2c3f57;
+  outline-style: solid;
+  outline-color: cornflowerblue;
+}
+
+/* Media Query */
+@media screen and (max-width: 932px) {
+  html {
+    font-size: 45%;
+  }
+  nav {
+    text-align: center;
+  }
+  #logo {
+    padding: 2rem;
+  }
+  .cloud {
+    height: 30rem;
+    pointer-events: none;
+  }
+  /* .moving-cloud-1 {
+    z-index: -1;
+  } */
+  .moving-cloud-2 {
+    z-index: -1;
+    top:10%;
+
+  }
+  .locations-head h3 {
+    background: rgba(19, 28, 39, 0.9);
+    -webkit-text-fill-color: white;
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .form-wrapper {
+    width: 100%;
+    background-color: transparent;
+  }
+
+  form input, 
+  form textarea {
+    border-color: transparent;
+    box-shadow: 0px 10px 10px rgba(7, 19, 17, 0.1), 0px 20px 20px rgba(0, 0, 0, 0.1);
+  }
+
+  #submit {
+    width: 80vw;
+    border-radius: 1rem;
+    margin-left: 10%;
+  }
+  footer {
+    text-align: center;
+  }
+  footer h5 {
+    padding-bottom: 3rem;
+  }
+}
